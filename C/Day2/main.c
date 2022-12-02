@@ -19,10 +19,11 @@ int A(){
     int bufferLength = 8;
     char buffer[bufferLength];
 
-    file = fopen("../input.txt", "r");
+    file = fopen("input.txt", "r");
 
     if (file == NULL) {
-        printf("Error opening file");
+        printf("Error opening file\n");
+        return 0;
     }
 
     while(fgets(buffer, bufferLength, file)){
@@ -30,6 +31,11 @@ int A(){
         currScore += calculateScore(buffer);
     }
 
+    fclose(file);
+
+    printf("----------------------\n");
+    printf("     (Day 2 - A)      \n");
+    printf("----------------------\n");
     printf("max score is: %d\n", currScore);
     return currScore;
 }
@@ -40,10 +46,11 @@ int B(){
     int bufferLength = 8;
     char buffer[bufferLength];
 
-    file = fopen("../input.txt", "r");
+    file = fopen("input.txt", "r");
 
     if (file == NULL) {
-        printf("Error opening file");
+        printf("Error opening file\n");
+        return 0;
     }
 
     while(fgets(buffer, bufferLength, file)){
@@ -51,6 +58,11 @@ int B(){
         currScore += calculateTypeScore(buffer);
     }
 
+    fclose(file);
+
+    printf("----------------------\n");
+    printf("     (Day 2 - B)      \n");
+    printf("----------------------\n");
     printf("max score is: %d\n", currScore);
     return currScore;
 }
