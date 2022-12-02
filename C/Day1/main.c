@@ -8,8 +8,9 @@ int sortTopThree(int *a, int *b, int *c);
 void swap(int *pInt, int *pInt1);
 
 int main() {
-    // return A();
-    return B();
+    A();
+    B();
+    return 0;
 }
 
 int A(){
@@ -39,7 +40,11 @@ int A(){
 
     fclose(file);
 
-    printf("Elf %d has the most food with %d kcal\n", highId, highSum);
+    printf("----------------------\n");
+    printf("     (Day 1 - A)      \n");
+    printf("----------------------\n");
+
+    printf("Elf %d has the most food with %d kcal\n\n", highId, highSum);
     return highId;
 }
 
@@ -75,7 +80,12 @@ int B(){
         }
     }
 
-    printf("The top three are %d, %d and %d, with a total of: %d\n", kcal1, kcal2, kcal3, kcal1+kcal2+kcal3);
+    fclose(file);
+
+    printf("----------------------\n");
+    printf("     (Day 1 - B)      \n");
+    printf("----------------------\n");
+    printf("The top three are %d, %d and %d, with a total of: %d\n\n", kcal1, kcal2, kcal3, kcal1+kcal2+kcal3);
 }
 
 int sortTopThree(int *a, int *b, int *c){
