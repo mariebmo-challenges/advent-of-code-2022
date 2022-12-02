@@ -8,7 +8,7 @@ int scoreFromChar(char letter);
 char translateChar(char letter);
 
 int main() {
-    //A();
+    A();
     B();
     return 0;
 }
@@ -30,7 +30,7 @@ int A(){
         currScore += calculateScore(buffer);
     }
 
-    printf("max score is: %d", currScore);
+    printf("max score is: %d\n", currScore);
     return currScore;
 }
 
@@ -51,7 +51,7 @@ int B(){
         currScore += calculateTypeScore(buffer);
     }
 
-    printf("max score is: %d", currScore);
+    printf("max score is: %d\n", currScore);
     return currScore;
 }
 
@@ -65,24 +65,17 @@ int calculateScore(char *line){
     if(their == our){
         score += 3;
         score += scoreFromChar(our);
-        printf("It's a tie! they:%c, us:%c. Score: %d\n", their, our, score);
-    } else if (their == 'A' && our == 'B'){
+    } else if (
+        their == 'A' && our == 'B'
+    || their == 'B' && our == 'C'
+    || their == 'C' && our == 'A'
+    ){
         score += 6;
         score += scoreFromChar(our);
-        printf("We won! they:%c, us:%c. Score: %d\n", their, our, score);
-    } else if (their == 'B' && our == 'C'){
-        score += 6;
-        score += scoreFromChar(our);
-        printf("We won! they:%c, us:%c. Score: %d\n", their, our, score);
-    } else if (their == 'C' && our == 'A'){
-        score += 6;
-        score += scoreFromChar(our);
-        printf("We won! they:%c, us:%c. Score: %d\n", their, our, score);
     } else {
         score += scoreFromChar(our);
-        printf("We lost. they:%c, us:%c. Score: %d\n", their, our, score);
-    }
 
+    }
     return score;
 }
 
